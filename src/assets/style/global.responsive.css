@@ -1,0 +1,829 @@
+@media screen and (max-width: 1600px) {
+      .footer-main {
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+      }
+
+      .hero-section {
+            height: 50vh;
+            min-height: 745px;
+      }
+
+      .ico-footer-main {
+            background-size: cover;
+      }
+
+
+}
+
+@media screen and (max-width: 1366px) {
+      .hero-section {
+            height: 50vh;
+            min-height: 665px;
+      }
+
+}
+
+@media screen and (max-width: 1199px) {
+      .border-btn-main .border-btn {
+            padding: 10px 11px;
+            font-size: 14px;
+            line-height: 19px;
+      }
+
+      .header-social-icon {
+            height: 20px;
+            width: 20px;
+      }
+
+      .header-btn-flex,
+      .header-right-main {
+            gap: 10px;
+      }
+
+      .header-logo-box .header-logo {
+            height: 65px;
+            max-width: 58px;
+      }
+
+      .header-nav-main .header-nav-ul {
+            gap: 17px;
+      }
+
+      .sidebar-main .sidebar-list {
+            display: flex;
+            overflow-x: scroll;
+      }
+
+      .sidebar-main .sidebar-list::-webkit-scrollbar {
+            width: 0px;
+            height: 0;
+      }
+
+      .ton-connect-main button {
+            height: 41px;
+      }
+
+      .user-layout-left {
+            max-width: 200px;
+            flex: 0 0 200px;
+      }
+}
+
+@media screen and (max-width: 1024px) {
+
+      .hero-section {
+            height: 37vh;
+            min-height: 500px;
+      }
+
+      .page-wrapper {
+            padding: 30px 0px 50px;
+      }
+
+      .page-main {
+            margin-top: 90px;
+      }
+
+      /* start mobile menu responsive */
+
+      .header-main {
+            padding: 10px 0px;
+      }
+
+      .header-btn-main {
+            display: block;
+      }
+
+      .header-social-main {
+            display: none;
+      }
+
+      .header-right-main .mobile-menu-btn {
+            padding: 0px;
+            min-width: max-content;
+            display: block;
+      }
+
+      .header-logo-box .header-logo {
+            height: 64px;
+            max-width: 91px;
+      }
+
+
+      .header-logo-box {
+            display: flex;
+      }
+
+      .header-search-icon {
+            width: 13px;
+            height: 13px;
+      }
+
+      .header-search-box {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+      }
+
+      .mobile-menu-icon {
+            display: block;
+            height: 30px;
+            width: 30px;
+            object-fit: contain;
+      }
+
+      .body-overflow {
+            overflow: hidden;
+      }
+
+      .mobile-navbar-show {
+            display: block;
+      }
+
+      .header-nav-main {
+            position: fixed;
+            overflow: auto;
+            left: -1100px;
+            transition: 0.5s all;
+            height: 100vh;
+            max-width: 400px;
+            width: 100%;
+            top: 0px;
+            background-color: #0D0D0F;
+            z-index: 99;
+      }
+
+      .header-nav-main.mobilemenu-active {
+            left: 0px;
+      }
+
+      .header-nav-main .header-nav-ul {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 10px;
+      }
+
+      .header-nav-main .header-nav-li {
+            margin-right: 0px;
+            border-bottom: 1px solid #888888;
+            max-width: 100%;
+            padding: 13px 15px;
+      }
+
+      .header-nav-li.active::before,
+      .header-nav-li.active::after {
+            display: none;
+      }
+
+      .header-right-main {
+            gap: 10px;
+      }
+
+      .header-nav-main .header-nav-link {
+            font-size: 15px;
+            line-height: 20px;
+      }
+
+      .mobile-navbar-show {
+            display: block;
+      }
+
+      .header-nav-logo {
+            height: 48px;
+            max-width: 68px;
+      }
+
+      /* end mobile menu responsive */
+      .user-dashboad-row {
+            grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-login-btn-main .nav-login-btn {
+            display: block;
+      }
+
+      .header-nav-scroll {
+            height: calc(100vh - 275px);
+            overflow-y: scroll;
+      }
+
+      .text-logo {
+            display: block;
+            max-width: 116px;
+            height: 40px;
+      }
+
+      .nav-profile-main {
+            display: block;
+      }
+
+      .ico-footer-row .ico-footer-title {
+            font-size: 42px;
+            line-height: 54px;
+      }
+
+      .ico-footer-main {
+            height: 400px;
+      }
+
+      .ico-footer-row {
+            margin-bottom: 145px;
+      }
+
+      .ico-footer-bottom {
+            gap: 15px;
+            padding: 0;
+      }
+
+
+      .mission-img {
+            height: 435px;
+      }
+
+      .footer-row .footer-title {
+            font-size: 30px;
+            line-height: 47px;
+      }
+
+
+
+}
+
+
+@media screen and (max-width: 991px) {
+      .container {
+            padding: 0px 30px;
+      }
+
+      .header-nav-main {
+            max-width: 300px;
+      }
+
+      .token-img {
+            display: none;
+      }
+
+      .team-flex {
+            grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ico-hero-card {
+            flex-direction: column;
+            padding: 24px;
+      }
+
+      .whitepaper-btn-main {
+            display: block;
+      }
+
+      .ico-hero-right-card {
+            max-width: 100%;
+            flex: 0 0 100%;
+      }
+
+      .buy-presale-inner-card .buy-presale-btn,
+      .buy-presale-inner-card .buy-presale-btn:hover {
+            margin-top: 14px;
+      }
+
+      .presale-input {
+            width: 100%;
+      }
+
+      .participate-list-main {
+            margin-top: 20px;
+      }
+
+      .tokenomics-section {
+            padding: 48px 0px 0px;
+      }
+
+      .page-title-main .roadmap-title {
+            font-size: 32px;
+            line-height: 38px;
+      }
+
+      .tokenomics-content-box .tokenomics-title {
+            font-size: 36px;
+            line-height: 42px;
+      }
+
+      .ico-roadmap-section {
+            padding: 48px 0px 0px;
+      }
+
+      .ico-roadmap-slider-main .owl-theme .owl-nav {
+            margin-left: 0;
+      }
+
+      .whitepaper-section {
+            padding: 48px 0px 0px;
+      }
+
+      .white-paper-btn-flex {
+            justify-content: center;
+      }
+
+      .page-title-main .team-title {
+            text-align: center;
+      }
+
+      .ico-footer-main {
+            height: 760px;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../images/png/tablet-ico-footer-bg.jfif);
+      }
+
+      .footer-container {
+            padding: 0px 6px 0px 24px;
+      }
+
+      .ico-footer-row .ico-footer-title {
+            font-size: 48px;
+            line-height: 57px;
+            margin-bottom: 24px;
+      }
+
+      .ico-footer-row {
+            max-width: 100%;
+            margin-bottom: 430px;
+      }
+
+      .ico-footer-bottom {
+            row-gap: 24px;
+      }
+
+      .team-section {
+            padding: 48px 0px 10px;
+      }
+
+      .mission-img {
+            height: 273px;
+      }
+
+      .mission-img-box {
+            z-index: -1;
+            bottom: -11%;
+      }
+
+      .feature-card {
+            height: auto;
+      }
+
+      .counter-box .counter-title {
+            font-size: 23px;
+            line-height: 33px;
+      }
+
+      .hero-contnet-main .hero-title {
+            font-size: 29px;
+            line-height: 37px;
+            margin-bottom: 10px;
+      }
+
+      .games-section {
+            padding: 48px 0px;
+      }
+
+
+      .feature-card .feature-title {
+            font-size: 22px;
+            line-height: 36px;
+            margin-bottom: 15px;
+      }
+
+      .footer-row .footer-title {
+            font-size: 22px;
+            line-height: 36px;
+      }
+
+      .games-card-row {
+            grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-social-main .footer-social-title {
+            font-size: 20px;
+            line-height: 30px;
+      }
+
+      .footer-bottom-left-main .footer-nav-list {
+            gap: 15px;
+      }
+
+      .footer-bottom {
+            gap: 15px;
+      }
+
+
+      .footer-form-btn .footer-btn {
+            margin: 16px 0px 40px;
+      }
+
+      .roadmap-section {
+            padding: 48px 0px 48px;
+      }
+
+      .roadmap-btn-main {
+            margin-top: 40px;
+      }
+
+      .page-title-main .page-title {
+            font-size: 33px;
+            line-height: 40px;
+      }
+
+      .mission-contnt-box .mission-title {
+            font-size: 23px;
+            line-height: 31px;
+      }
+
+      .mission-section {
+            padding: 48px 0px;
+      }
+
+      .timer-counter-box {
+            height: 65px;
+            width: 65px;
+            border-radius: 8px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
+      }
+
+      .timer-counter-box .timer-counter-value {
+            font-size: 31px;
+            line-height: 44px;
+      }
+
+      .mobile-hero-video {
+            display: block;
+      }
+
+      .hero-section {
+            height: 48vh;
+            min-height: 700px;
+      }
+
+      .user-layout-main {
+            flex-direction: column;
+      }
+
+      .user-layout-left {
+            max-width: 100%;
+            flex: 0 0 100%;
+      }
+}
+
+@media screen and (max-device-width: 1023px) and (orientation : landscape) {}
+
+@media screen and (max-device-width: 767px) and (orientation: landscape) {}
+
+
+@media (max-width: 767px) {
+      .counter-box {
+            background-image: url(../images/png/counter-mobile-bg.png);
+      }
+
+      .header-nav-main {
+            max-width: 100%;
+      }
+
+
+      .container {
+            padding: 0px 15px;
+      }
+
+      .roadmap-card-title-box {
+            display: flex;
+            gap: 10px;
+      }
+
+      .owl-carousal-roadmap .owl-stage:nth-child(1) .owl-item.center .roadmap-card .roadmap-card-title {
+            font-size: 24px;
+      }
+
+      .text-logo {
+            max-width: 87px;
+            height: 30px;
+      }
+
+      .header-logo-box .header-logo {
+            height: 48px;
+            max-width: 68px;
+      }
+
+      .border-btn-main .border-btn {
+            padding: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 5px;
+      }
+
+      .primary-btn-main .primary-btn,
+      .primary-btn-main .primary-btn:hover {
+            padding: 10px;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 5px;
+      }
+
+      .timer-counter-box {
+            height: 62px;
+            width: 62px;
+      }
+
+      .ico-hero-card {
+            padding: 14px;
+      }
+
+      .timer-counter-box .timer-counter-value {
+            font-size: 32px;
+            line-height: 32px;
+      }
+
+      .counter-box {
+            padding: 24px 11px 21px;
+      }
+
+      .timer-counter-wrraper .timer-counter-lable {
+            font-size: 12px;
+            line-height: 16px;
+      }
+
+      .ico-hero-section {
+            padding: 4px;
+      }
+
+      .rolling-counter-section {
+            margin-bottom: 10px;
+      }
+
+      .ico-hero-left-card .ico-hero-title {
+            font-size: 32px;
+            line-height: 38px;
+      }
+
+      .ico-list-box .ico-list-text {
+            font-size: 14px;
+            line-height: 21px;
+      }
+
+      .buy-presale-card .buy-presale-title {
+            font-size: 20px;
+            line-height: 24px;
+      }
+
+      .buy-presale-title-header {
+            padding: 8px 16px;
+      }
+
+      .buy-presale-inner-card {
+            padding: 8px;
+      }
+
+      .presale-input .form-lable {
+            font-size: 12px;
+            line-height: 16px;
+      }
+
+      .presale-input .form-group .form-control input {
+            padding: 10px 15px;
+      }
+
+      .participate-content-box {
+            padding: 14px;
+      }
+
+      .participate-content-box .participate-title {
+            font-size: 24px;
+            line-height: 30px;
+      }
+
+      .participate-list-main {
+            margin-top: 20px;
+      }
+
+      .tokenomics-section {
+            padding: 48px 0px 0px;
+      }
+
+      .tokenomics-content-box .tokenomics-title {
+            font-size: 32px;
+            line-height: 40px;
+      }
+
+      .tokenomics-main-box {
+            padding: 20px 12px;
+            gap: 20px;
+      }
+
+      .tokenomics-box .tokenomics-box-heading {
+            font-size: 24px;
+            line-height: 30px;
+      }
+
+
+      .ico-roadmap-section {
+            padding: 48px 0px 0px;
+      }
+
+      .page-title-main .roadmap-title {
+            margin-bottom: 24px;
+      }
+
+
+      .roadmap-card li {
+            color: #888888;
+      }
+
+      .whitepaper-section {
+            padding: 48px 0px 0px;
+      }
+
+      .team-flex {
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 24px;
+      }
+
+      .team-section {
+            padding: 96px 0px 112px;
+      }
+
+      .team-card-img-box {
+            margin-bottom: 12px;
+      }
+
+      .team-card-name .team-card-title,
+      .team-card-name .team-card-para {
+            text-align: center;
+      }
+
+      .team-section {
+            padding: 48px 25px 60px;
+      }
+
+      .white-btn-main .white-btn,
+      .white-btn-main .white-btn:hover {
+            padding: 11px 10px;
+            font-size: 12px;
+            line-height: 18px;
+            border-radius: 5px;
+      }
+
+      .ico-footer-row .ico-footer-title {
+            font-size: 40px;
+            line-height: 48px;
+            margin-bottom: 16px;
+      }
+
+      .ico-footer-social-main .ico-footer-social-title {
+            font-size: 16px;
+            line-height: 20px;
+      }
+
+      .ico-footer-main {
+            height: 780px;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../images/png/mobile-ico-footer.jfif);
+      }
+
+      .ico-footer-social-arrow {
+            display: none;
+      }
+
+      .ico-footer-social-main {
+            align-items: flex-start;
+            flex-direction: column;
+      }
+
+      .ico-footer-row {
+            margin-bottom: 313px;
+      }
+
+      .ico-footer-bottom-left-main .ico-footer-nav-list {
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+      }
+
+      .ico-footer-bottom-right-main .ico-footer-terms-list {
+            column-gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 16px;
+      }
+
+      .games-card-row {
+            grid-template-columns: repeat(1, 1fr);
+      }
+
+      .feature-row {
+            grid-template-columns: repeat(1, 1fr);
+      }
+
+      .hero-contnet-main {
+            padding-top: 200px;
+      }
+
+      .hero-section {
+            height: 48vh;
+            min-height: 480px;
+      }
+
+      .hero-contnet-main .hero-para {
+            margin-bottom: 20px;
+      }
+
+      .mobile-roadmap-main {
+            display: block;
+      }
+
+      .roadmap-card-row {
+            display: none;
+      }
+
+      .user-dashboad-row {
+            grid-template-columns: repeat(1, 1fr);
+      }
+
+      .inner-page-title-main {
+            flex-direction: column;
+            align-items: flex-start;
+      }
+
+      .inner-page-title-main .wallet-copy-main {
+            max-width: 200px;
+      }
+
+      .user-layout-main.active .user-layout-left {
+            position: fixed;
+            left: 15px;
+            right: 15px;
+            top: 20%;
+            z-index: 9;
+            /* max-width: 345px; */
+            max-width: calc(100vw - 30px);
+            flex: 0 0 100%;
+            display: block;
+      }
+
+      .header-btn-flex .send-request-btn,
+      .ton-connect-main {
+            display: none;
+      }
+
+      .user-header-profile-icon {
+            height: 30px;
+            width: 30px;
+      }
+
+      .header-right-main .user-drop-header-btn {
+            min-width: 25px;
+      }
+
+      .user-layout-left {
+            display: none;
+      }
+
+      .user-sidebar-close-main {
+            display: block;
+      }
+
+
+      .user-mobile-btn-sidebar-box {
+            display: block;
+      }
+
+
+
+
+}
+
+@media (max-width: 549px) {}
+
+@media (max-width: 374px) {
+      .timer-counter-box {
+            height: 35px;
+            width: 35px;
+      }
+
+      .timer-counter-box .timer-counter-value {
+            font-size: 16px;
+            line-height: 28px;
+      }
+
+      .custom-radio-para {
+            font-size: 13px;
+            line-height: 20px;
+      }
+
+      .custom-radio-input {
+            width: 135px;
+      }
+}

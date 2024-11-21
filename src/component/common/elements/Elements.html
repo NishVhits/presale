@@ -1,0 +1,983 @@
+import React from 'react'
+
+// In this page We create some elements
+
+// Input Field
+// Password Field
+// Dropdown
+// Text Area Field ( Address Field / Description Field )
+// radio group
+// Create custom switch design */
+// Create custom file upload design */
+// Create grid ( colum and row ) */
+// mui grid colum
+// Select2
+// accordian
+// table
+// checkbox
+
+
+
+
+// for custom checkbox design
+
+
+const BpIcon = styled('span')(({ theme }) => ({
+borderRadius: 0,
+border: "1px solid #114A65",
+width: 16,
+height: 16,
+display: "flex",
+justifyContent: "center",
+alignItems: "center",
+boxShadow: "none",
+backgroundColor: theme.palette.mode === 'dark' ? '#394b59' : 'transparent',
+}));
+
+const BpCheckedIcon = styled(BpIcon)({
+backgroundColor: 'transparent',
+'&:before': {
+display: 'block',
+width: 12,
+height: 12,
+backgroundImage:
+"url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath" +
+" fill-rule='evenodd' clip-rule='evenodd' d='M12 5c-.28 0-.53.11-.71.29L7 9.59l-2.29-2.3a1.003 " +
+"1.003 0 00-1.42 1.42l3 3c.18.18.43.29.71.29s.53-.11.71-.29l5-5A1.003 1.003 0 0012 5z'
+fill='%23114A65' /% 3E % 3C/ svg % 3E\")",
+content: '""',
+},
+'input:hover ~ &': {
+backgroundColor: 'transparent',
+},
+});
+
+// Inspired by blueprintjs
+function BpCheckbox(props) {
+return (
+<Index.Checkbox sx={{ '&:hover' : { bgcolor: 'transparent' }, }} disableRipple color="default"
+      checkedIcon={<BpCheckedIcon />}
+icon={
+<BpIcon />}
+inputProps={{ 'aria-label': 'Checkbox demo' }}
+{...props}
+/>
+);
+}
+
+
+export default function Elements() {
+
+
+// add user modal
+const [open, setOpen] = React.useState(false);
+const handleOpen = () => setOpen(true);
+const handleClose = () => setOpen(false);
+
+
+
+// for password eye hide and show
+
+const [showPassword, setShowPassword] = React.useState(false);
+
+const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+const handleMouseDownPassword = (event) => {
+event.preventDefault();
+};
+
+// for custom switch design
+
+const IOSSwitch = Index.styled((props) => (
+<Index.Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+width: 34,
+height: 20,
+padding: 0,
+'& .MuiSwitch-switchBase': {
+padding: 0,
+margin: 3,
+transitionDuration: '300ms',
+'&.Mui-checked': {
+transform: 'translateX(16px)',
+color: '#fff',
+'& + .MuiSwitch-track': {
+backgroundColor: theme.palette.mode === 'dark' ? '#2ECA45' : '#114A65',
+opacity: 1,
+border: 0,
+},
+'&.Mui-disabled + .MuiSwitch-track': {
+opacity: 0.5,
+},
+},
+'&.Mui-focusVisible .MuiSwitch-thumb': {
+color: '#33cf4d',
+border: '6px solid #fff',
+},
+'&.Mui-disabled .MuiSwitch-thumb': {
+color:
+theme.palette.mode === 'light'
+? theme.palette.grey[100]
+: theme.palette.grey[600],
+},
+'&.Mui-disabled + .MuiSwitch-track': {
+opacity: theme.palette.mode === 'light' ? 0.7 : 0.3,
+},
+},
+'& .MuiSwitch-thumb': {
+boxSizing: 'border-box',
+width: 14,
+height: 14,
+boxShadow: "none",
+},
+'& .MuiSwitch-track': {
+borderRadius: 26 / 2,
+backgroundColor: theme.palette.mode === 'light' ? '#E9E9EA' : '#39393D',
+opacity: 1,
+transition: theme.transitions.create(['background-color'], {
+duration: 500,
+}),
+},
+}));
+
+<!-- ================================================================== -->
+
+<!-- for dropdown input field with icons 
+
+                  for open handleChangedropdown
+
+                  const [age, setAge] = React.useState('');
+
+                  const handleChangedropdown = (event) => {
+                        setAge(event.target.value);
+                  }; -->
+
+<Index.Box className="modal-input-box modal-status-input-box">
+      <Index.FormHelperText className='modal-form-lable'>Select Status</Index.FormHelperText>
+      <Index.Box className="modal-form-group">
+            <Index.Box className='modal-dropdown-box'>
+                  <Index.FormControl className='modal-form-control'>
+                        <Index.Select className='modal-dropdown-select' value={age} onChange={handleChangedStatus}
+                              displayEmpty inputProps={{ 'aria-label' : 'Without label' }}>
+                              <Index.MenuItem value="" className='modal-menuitem'>
+                                    <Index.Box className="modal-menuitem-flex">
+                                          <img src={PagesIndex.Svg.activeIcon} alt="Active"
+                                                className="menu-active-icon" />
+                                          <Index.Typography className="modal-menuitem-text">Active</Index.Typography>
+                                    </Index.Box>
+                              </Index.MenuItem>
+                              <Index.MenuItem value={10} className='modal-menuitem'>
+                                    <Index.Box className="modal-menuitem-flex">
+                                          <img src={PagesIndex.Svg.activeIcon} alt="Active"
+                                                className="menu-active-icon" />
+                                          <Index.Typography className="modal-menuitem-text">Active</Index.Typography>
+                                    </Index.Box>
+                              </Index.MenuItem>
+                              <Index.MenuItem value={20} className='modal-menuitem'>
+                                    <Index.Box className="modal-menuitem-flex">
+                                          <img src={PagesIndex.Svg.activeIcon} alt="Active"
+                                                className="menu-active-icon" />
+                                          <Index.Typography className="modal-menuitem-text">Active</Index.Typography>
+                                    </Index.Box>
+                              </Index.MenuItem>
+                              <Index.MenuItem value={30} className='modal-menuitem'>
+                                    <Index.Box className="modal-menuitem-flex">
+                                          <img src={PagesIndex.Svg.activeIcon} alt="Active"
+                                                className="menu-active-icon" />
+                                          <Index.Typography className="modal-menuitem-text">Active</Index.Typography>
+                                    </Index.Box>
+                              </Index.MenuItem>
+                        </Index.Select>
+                  </Index.FormControl>
+                  <img src={PagesIndex.Svg.blackDownIcon} alt="Down" className="black-down" />
+            </Index.Box>
+      </Index.Box>
+</Index.Box>
+
+
+
+<!--  input filed  -->
+
+<Index.Box className="admin-input-box add-user-input">
+      <Index.FormHelperText className='admin-form-lable'>User Name</Index.FormHelperText>
+      <Index.Box className="admin-form-group">
+            <Index.TextField fullWidth id="fullWidth" className="admin-form-control" placeholder="" />
+      </Index.Box>
+</Index.Box>
+
+
+<!-- floting input filed  -->
+
+<Index.Box className="input-box addrole-input-box">
+      <Index.TextField label="Role Name" variant="filled" className="form-control" placeholder="Enter Role Name"
+            fullWidth />
+</Index.Box>
+
+
+
+<!-- password input field  -->
+<Index.Box className="admin-input-box password-input-box">
+      <Index.FormHelperText className="admin-form-lable">
+            Password
+      </Index.FormHelperText>
+      <Index.Box className="admin-form-group">
+            <Index.OutlinedInput className="admin-form-control-eye" autocomplete="off" id="outlined-adornment-password"
+                  type={showPassword ? "text" : "password" } endAdornment={ <Index.InputAdornment position="end">
+                  <Index.IconButton aria-label="toggle password visibility" onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword} edge="end">
+                        {showPassword ? (
+                        <Index.VisibilityOff />
+                        ) : (
+                        <Index.Visibility />
+                        )}
+                  </Index.IconButton>
+                  </Index.InputAdornment>
+                  }
+                  />
+      </Index.Box>
+</Index.Box>
+
+
+
+<!-- dropdown field  -->
+
+<!-- for open handleChangedropdown
+
+                  const [age, setAge] = React.useState('');
+
+                  const handleChangedropdown = (event) => {
+                        setAge(event.target.value);
+                  };  -->
+
+<Index.Box className="admin-input-box add-user-input">
+      <Index.FormHelperText className='admin-form-lable'>SKU</Index.FormHelperText>
+      <Index.Box className="admin-form-group">
+            <Index.Box className='admin-dropdown-box'>
+                  <Index.FormControl className='admin-form-control'>
+                        <Index.Select className='admin-dropdown-select ' value={age} onChange={handleChangedropdown}
+                              displayEmpty inputProps={{ 'aria-label' : 'Without label' }}>
+                              <Index.MenuItem value="" className='admin-menuitem'>
+                                    USD
+                              </Index.MenuItem>
+                              <Index.MenuItem value={10} className='admin-menuitem'>USD</Index.MenuItem>
+                              <Index.MenuItem value={20} className='admin-menuitem'>USD</Index.MenuItem>
+                              <Index.MenuItem value={30} className='admin-menuitem'>USD</Index.MenuItem>
+                        </Index.Select>
+                  </Index.FormControl>
+            </Index.Box>
+      </Index.Box>
+</Index.Box>
+
+
+<!-- select dropdown  -->
+<Index.Box className="input-box addstaff-input-box">
+      <Index.Box className="dropdown-box">
+            <Index.FormControl className="form-control drop-form-control">
+                  <Index.Select className="dropdown-select drop-select" value={age} onChange={handleChangeStatus}
+                        displayEmpty inputProps={{ 'aria-label' : 'Without label' }}>
+                        <Index.MenuItem className="drop-menuitem">
+                              Hello
+                        </Index.MenuItem>
+                  </Index.Select>
+                  <img src={PagesIndex.Svg.grayDownarrow} className="grey-down" alt="down arrow"></img>
+            </Index.FormControl>
+      </Index.Box>
+</Index.Box>
+
+
+
+<!-- radio group -->
+
+<Index.Box className="input-box">
+      <Index.FormHelperText className='form-lable'>Price Limit</Index.FormHelperText>
+      <Index.Box className="radio-main">
+            <Index.RadioGroup row aria-labelledby="demo-row-radio-buttons-group-label" name="row-radio-buttons-group"
+                  className='radiogroup'>
+                  <Index.FormControlLabel value="female" control={<Index.Radio className='admin-radio' />}
+                  label="Razorpay - UPI/Credit Card/Debit Car/Net Banking"
+                  />
+                  <Index.FormControlLabel value="female" control={<Index.Radio className='admin-radio' />}
+                  label="Razorpay - UPI/Credit Card/Debit Car/Net Banking"
+                  />
+                  <Index.FormControlLabel value="female" control={<Index.Radio className='admin-radio' />}
+                  label="Razorpay - UPI/Credit Card/Debit Car/Net Banking"
+                  />
+            </Index.RadioGroup>
+      </Index.Box>
+</Index.Box>
+
+
+
+
+<!-- text area  -->
+
+<Index.Box className="input-box add-plan-input-box">
+      <Index.Box className="form-group">
+            <Index.TextareaAutosize aria-label="minimum height" // minRows={3} placeholder=""
+                  className="form-control-textarea" placeholder="Description " />
+      </Index.Box>
+</Index.Box>
+
+
+<!-- teat area  -->
+
+<Index.Box className="input-box">
+      <Index.FormHelperText className='modal-form-lable'>Reason</Index.FormHelperText>
+      <Index.Box className="form-group">
+            <Index.TextareaAutosize aria-label="minimum height" // minRows={3} placeholder=""
+                  className="form-control-textarea" placeholder="Description " />
+      </Index.Box>
+</Index.Box>
+
+
+<!-- checkbox  -->
+
+<Index.Box className="admin-checkbox-main">
+      <BpCheckbox />
+      <Index.Typography className="admin-checkbox-lable">Remember Me</Index.Typography>
+</Index.Box>
+
+
+<!-- Create custom switch design  -->
+
+<Index.Box className="admin-switch-main">
+      <Index.FormControlLabel control={<IOSSwitch sx={{ m: 1 }} defaultChecked />}
+      label="Public Profile" className='admin-switch-lable'
+      />
+</Index.Box>
+
+
+
+<!-- Create custom file upload design  -->
+
+<Index.Box className="admin-file-upload-btn-main">
+      <img src={Index.Png.usericon} className="admin-upload-profile-img" alt='upload img'></img>
+      <Index.Button variant="contained" component="label" className='admin-file-upload-btn'>
+            <img src={Index.Svg.edit} className="admin-upload-icon-img" alt='upload img'></img>
+            <input hidden accept="image/*" multiple type="file" />
+      </Index.Button>
+</Index.Box>
+
+
+<!-- Create custom grid ( colum and row )  -->
+<Index.Box className="admin-row">
+      <Index.Box className="grid-column">
+            <Index.Box className="cust-col">
+
+            </Index.Box>
+      </Index.Box>
+      <Index.Box className="grid-column">
+            <Index.Box className="cust-col">
+
+            </Index.Box>
+      </Index.Box>
+      <Index.Box className="grid-column">
+            <Index.Box className="cust-col">
+
+            </Index.Box>
+      </Index.Box>
+</Index.Box>
+
+
+<!-- Select 2input filed  -->
+<!-- import Select2 from 'react-select2-wrapper';  -->
+
+<Index.Box className="admin-select2-main">
+      <Index.Select2 multiple style={{ width: "100%" }} data={["bug", "feature" , "documents" , "discussion" ]}
+            options={{ placeholder: "search by tags" , }} />
+</Index.Box>
+
+<!-- start mui grid colum  -->
+<Index.Box className='grid-row'>
+      <Index.Box sx={{ width: 1 }} className="grid-main">
+            <Index.Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={{ xs: 2, sm: 2, md: 0, lg: 0 }}>
+                  <Index.Box gridColumn={{ xs: "span 12" , sm: "span 6" , md: "span 4" , lg: "span 6" }}
+                        className="grid-column">
+                        <Index.Box className="auth-input-main">
+
+                        </Index.Box>
+                  </Index.Box>
+                  <Index.Box gridColumn={{ xs: "span 12" , sm: "span 6" , md: "span 8" , lg: "span 6" }}
+                        className="grid-column">
+                        <Index.Box className="auth-input-main">
+
+                        </Index.Box>
+                  </Index.Box>
+            </Index.Box>
+      </Index.Box>
+</Index.Box>
+
+
+
+<!-- start accordian  -->
+
+<Index.Box className="faq-accordian-main">
+      <Index.Box className="accordian-main common-card">
+            <Index.Accordion className="accordian">
+                  <Index.AccordionSummary className="accordian-summary" expandIcon={<Index.ExpandMoreIcon
+                        className="accordian-expan-icon" />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  >
+                  <Index.Box className="accordian-title-main">
+                        <Index.Box className="accordian-title">
+                              Accordion 1
+                        </Index.Box>
+                  </Index.Box>
+                  </Index.AccordionSummary>
+                  <Index.AccordionDetails className="accordian-details">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                  </Index.AccordionDetails>
+            </Index.Accordion>
+
+            <Index.Accordion className="accordian">
+                  <Index.AccordionSummary className="accordian-summary" expandIcon={<Index.ExpandMoreIcon
+                        className="accordian-expan-icon" />}
+                  aria-controls="panel1-content"
+                  id="panel2-header"
+                  >
+                  <Index.Box className="accordian-title-main">
+                        <Index.Box className="accordian-title">
+                              Accordion 1
+                        </Index.Box>
+                  </Index.Box>
+                  </Index.AccordionSummary>
+                  <Index.AccordionDetails className="accordian-details">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                  </Index.AccordionDetails>
+            </Index.Accordion>
+      </Index.Box>
+</Index.Box>
+
+
+<!-- start table  -->
+
+<Index.Box className="card-border common-card">
+      <Index.Box className="subscription-table-main page-table-main">
+            <Index.TableContainer component={Index.Paper} className='table-container'>
+                  <Index.Table aria-label="simple table" className='table'>
+                        <Index.TableHead className='table-head'>
+                              <Index.TableRow className='table-row'>
+                                    <Index.TableCell component='th' className='table-th' width="15%">Product</Index.TableCell>
+                                    <Index.TableCell component='th' className='table-th' width="10%">Start Date</Index.TableCell>
+                                    <Index.TableCell component='th' className='table-th' width="10%">End Date</Index.TableCell>
+                                    <Index.TableCell component='th' className='table-th' width="10%">Price</Index.TableCell>
+                                    <Index.TableCell component='th' className='table-th' width="5%" align="right">Action</Index.TableCell>
+                              </Index.TableRow>
+                        </Index.TableHead>
+                        <Index.TableBody className='table-body'>
+                              <Index.TableRow
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                              >
+                                    <Index.TableCell component='td' className='table-td'>
+                                          <Index.Typography className='user-table-data-text'>
+                                                12974 Keebler
+                                          </Index.Typography>
+                                    </Index.TableCell>
+                                    <Index.TableCell component='td' className='table-td'>
+                                          <Index.Typography className='user-table-data-text'>
+                                                12/05/2024
+                                          </Index.Typography>
+                                    </Index.TableCell>
+                                    <Index.TableCell component='td' className='table-td'>
+                                          <Index.Typography className='user-table-data-text'>
+                                                12/05/2024
+                                          </Index.Typography>
+                                    </Index.TableCell>
+                                    <Index.TableCell component='td' className='table-td'>
+                                          <Index.Typography className='user-table-data-text'>
+                                                1546
+                                          </Index.Typography>
+                                    </Index.TableCell>
+                                    <Index.TableCell component='td' className='table-td'>
+                                          <Index.Box className="user-table-data-btn-flex">
+                                                <Index.Tooltip
+                                                      title="Edit"
+                                                      arrow
+                                                      placement="bottom"
+                                                      className="user-tooltip"
+                                                >
+                                                      <Index.Button className='user-table-data-btn'>
+                                                            <img src={PagesIndex.Svg.renewIcon} className='user-table-icon' alt='Edit' />
+                                                      </Index.Button>
+                                                </Index.Tooltip>
+                                          </Index.Box>
+                                    </Index.TableCell>
+                              </Index.TableRow>
+                        </Index.TableBody>
+                  </Index.Table>
+            </Index.TableContainer>
+      </Index.Box>
+      <Index.Box className="user-pagination-main">
+            <PagesIndex.Pagination />
+      </Index.Box>
+</Index.Box>
+
+
+<!-- modal   On main page  -->
+
+<!-- const [openViewStatus, setOpenViewStatus] = React.useState(false);
+                  const handleOpenViewStatus = () => setOpenViewStatus(true);
+                  const handleCloseViewStatus = () => setOpenViewStatus(false); -->
+
+
+<PagesIndex.StaffStatus openViewStatus={openViewStatus} handleOpenViewStatus={handleOpenViewStatus}
+      handleCloseViewStatus={handleCloseViewStatus} />
+
+<!-- modal (On modal page) -->
+
+const {openViewStaff, handleOpenViewStaff, handleCloseViewStaff} = props;
+
+
+<!-- const [openBillingAddress, setOpenBillingAddress] = React.useState(false);
+const handleOpenBillingAddress = () => setOpenBillingAddress(true);
+const handleCloseBillingAddress = () => setOpenBillingAddress(false); -->
+
+<Index.Modal aria-labelledby="modal-modal-title" open={openBillingAddress} onClose={handleCloseBillingAddress}
+aria-describedby="modal-modal-description" className='modal'>
+<Index.Box sx={PagesIndex.style} className="modal-inner-main">
+      <Index.Box className="modal-header">
+            <Index.Typography className="modal-title">Billing Address</Index.Typography>
+            <Index.Button className='modal-close-btn' onClick={handleCloseBillingAddress}><img
+                  src={PagesIndex.Svg.closeIcon} className="modal-close-icon" alt='Close' />
+            </Index.Button>
+      </Index.Box>
+      <Index.Box className="modal-body">
+            <Index.Box className="modal-hgt-scroll cus-scrollbar">
+                  <Index.Box className='billing-address-row'>
+                        <Index.Box sx={{ width: 1 }} className="grid-main">
+                              <Index.Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={{ xs: 2, sm: 2, md: 2, lg: 2 }}>
+                                    <Index.Box gridColumn={{ xs: "span 12", sm: "span 6", md: "span 4", lg: "span 6" }}
+                                          className="grid-column">
+                                          <Index.Box className="input-box billing-address-input-box">
+                                                <Index.FormHelperText className='form-lable'>First name<span className='sign-required'>*</span></Index.FormHelperText>
+                                                <Index.Box className="form-group">
+                                                      <Index.TextField fullWidth id="fullWidth" className="form-control" placeholder="Enter First Name" />
+                                                </Index.Box>
+                                          </Index.Box>
+                                    </Index.Box>
+                                    <Index.Box gridColumn={{ xs: "span 12", sm: "span 6", md: "span 8", lg: "span 6" }}
+                                          className="grid-column">
+                                          <Index.Box className="input-box billing-address-input-box">
+                                                <Index.FormHelperText className='form-lable'>Last name<span className='sign-required'>*</span></Index.FormHelperText>
+                                                <Index.Box className="form-group">
+                                                      <Index.TextField fullWidth id="fullWidth" className="form-control" placeholder="Enter Last Name" />
+                                                </Index.Box>
+                                          </Index.Box>
+                                    </Index.Box>
+                                    <Index.Box gridColumn={{ xs: "span 12", sm: "span 12", md: "span 12", lg: "span 12" }}
+                                          className="grid-column">
+                                          <Index.Box className="input-box billing-address-input-box">
+                                                <Index.FormHelperText className='form-lable'>Country / Region <span className='sign-required'>*</span></Index.FormHelperText>
+                                                <Index.Box className="form-group">
+                                                      <Index.Box className='dropdown-box'>
+                                                            <Index.FormControl className='form-control'>
+                                                                  <Index.Select className='dropdown-select ' value={age} onChange={handleChangedropdown}
+                                                                        displayEmpty inputProps={{ 'aria-label': 'Without label' }}>
+                                                                        <Index.MenuItem value="" className='admin-menuitem'>
+                                                                              Select Country / Region
+                                                                        </Index.MenuItem>
+                                                                        <Index.MenuItem value={10} className='menuitem'>Select Country / Region</Index.MenuItem>
+                                                                        <Index.MenuItem value={20} className='menuitem'>Select Country / Region</Index.MenuItem>
+                                                                        <Index.MenuItem value={30} className='menuitem'>Select Country / Region</Index.MenuItem>
+                                                                  </Index.Select>
+                                                            </Index.FormControl>
+                                                      </Index.Box>
+                                                </Index.Box>
+                                          </Index.Box>
+                                    </Index.Box>
+                                    <Index.Box gridColumn={{ xs: "span 12", sm: "span 6", md: "span 12", lg: "span 12" }}
+                                          className="grid-column">
+                                          <Index.Box className="input-box billing-address-input-box address-input-box">
+                                                <Index.FormHelperText className='form-lable'>Street Address</Index.FormHelperText>
+                                                <Index.Box className="form-group address-form-group">
+                                                      <Index.TextField fullWidth id="fullWidth" className="form-control" placeholder="Enter House Number and Street Name" />
+                                                </Index.Box>
+
+                                                <Index.Box className="form-group address-form-group">
+                                                      <Index.TextField fullWidth id="fullWidth" className="form-control" placeholder="Enter Enter Apartment, Suite, Unit, etc." />
+                                                </Index.Box>
+                                          </Index.Box>
+                                    </Index.Box>
+                                    <Index.Box gridColumn={{ xs: "span 12", sm: "span 6", md: "span 6", lg: "span 6" }}
+                                          className="grid-column">
+                                          <Index.Box className="input-box billing-address-input-box">
+                                                <Index.FormHelperText className='form-lable'>Email address<span className='sign-required'>*</span></Index.FormHelperText>
+                                                <Index.Box className="form-group">
+                                                      <Index.TextField fullWidth id="fullWidth" className="form-control" placeholder="" />
+                                                </Index.Box>
+                                          </Index.Box>
+                                    </Index.Box>
+                              </Index.Box>
+                        </Index.Box>
+                  </Index.Box>
+            </Index.Box>
+      </Index.Box>
+      <Index.Box className="modal-footer">
+            <Index.Box className="modal-footer-btn-flex primary-btn-main">
+                  <Index.Button className='primary-btn'>Save</Index.Button>
+            </Index.Box>
+      </Index.Box>
+</Index.Box>
+</Index.Modal>
+
+
+
+<!--  file upload -->
+
+<Index.Box className="file-upload-outer-main">
+      <Index.Box className="file-upload-main">
+            <img src={PagesIndex.Svg.uploadUserImg} alt="Upload" className="file-upload-img" />
+            <Index.Button variant="contained" component="label" className="file-upload-btn">
+                  <img src={PagesIndex.Svg.photoCameraIcon} alt="Upload" className="file-upload-icon" />
+                  <input hidden accept="image/*" multiple type="file" />
+            </Index.Button>
+      </Index.Box>
+</Index.Box>
+
+
+
+<!-- typscript dropdown design  -->
+
+// for open handleChangedropdown
+import {SelectChangeEvent} from "@mui/material";
+
+
+const [age, setAge] = React.useState('');
+
+const handleChangedropdown = (event: SelectChangeEvent<string>) => {
+      setAge(event.target.value);
+      };
+
+
+      <!-- typscript menu design  -->
+
+      const [anchorElMenu, setAnchorElMenu] =
+      React.useState<null | HTMLElement>(null);
+
+            const openMenu = Boolean(anchorElMenu);
+            const handleClickMenu = (event: React.MouseEvent<HTMLElement>) => {
+                  setAnchorElMenu(event.currentTarget);
+                  };
+                  const handleCloseMenu = () => {
+                  setAnchorElMenu(null);
+                  };
+
+
+
+                  <!-- typescript tabs -->
+
+                  const [value, setValue] = React.useState(0);
+                  const handleChangeRoleTabs = (event: React.SyntheticEvent, newValue: number) => {
+                  console.log(event);
+                  setValue(newValue);
+                  };
+
+                  <Index.Box className="tabs-outer-main">
+                        <Index.Tabs value={value} onChange={handleChangeRoleTabs} aria-label="basic tabs example"
+                              className="tabs-main">
+                              <Index.Tab label="DayCare Subscription" {...PagesIndex.a11yProps(0)} className="tab" />
+                              <Index.Tab label="Plan Report" {...PagesIndex.a11yProps(1)} className="tab" />
+                        </Index.Tabs>
+                  </Index.Box>
+                  <PagesIndex.CustomTabPanel value={value} index={0} className="tabpanel">
+                        Item Two
+                  </PagesIndex.CustomTabPanel>
+                  <PagesIndex.CustomTabPanel value={value} index={1} className="tabpanel">
+                        Item Two
+                  </PagesIndex.CustomTabPanel>
+
+
+
+
+
+                  <!-- start tabs dessign -->
+import PropTypes from 'prop-types';
+
+// for tabs design
+
+function TabPanel(props : any) {
+      const { children, value, index, ...other } = props;
+
+      return (
+            <div
+                  role="tabpanel"
+                  hidden={value !== index}
+                  id={`simple-tabpanel-${index}`}
+                  aria-labelledby={`simple-tab-${index}`}
+                  {...other}
+            >
+                  {value === index && (
+                        <Index.Box sx={{ p: 3 }}>
+                              <Index.Typography>{children}</Index.Typography>
+                        </Index.Box>
+                  )}
+            </div>
+      );
+}
+
+TabPanel.propTypes = {
+      children: PropTypes.node,
+      index: PropTypes.number.isRequired,
+      value: PropTypes.number.isRequired,
+};
+
+function a11yprops(index : any) {
+      return {
+            id: `simple-tab-${index}`,
+            'aria-controls': `simple-tabpanel-${index}`,
+      };
+}
+
+
+      const [value, setValue] = React.useState(0);
+
+      const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+            setValue(newValue);
+      };
+
+      <Index.Box className="admin-tabs-main-box">
+            <Index.Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <Index.Tabs value={value} onChange={handleChange} aria-label="basic tabs example" className='admin-tabs-main'>
+                        <Index.Tab label="Edit Profile" {...a11yprops(0)} className="admin-tab" />
+                        <Index.Tab label="Change Password" {...a11yprops(1)} className="admin-tab" />
+                  </Index.Tabs>
+            </Index.Box>
+            <TabPanel value={value} index={0}>
+                  <Index.Box className="admin-tabpanel-main">
+                        <PagesIndex.EditProfile/>
+                  </Index.Box>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                  <Index.Box className="admin-tabpanel-main">
+                  <PagesIndex.ChangePassword/>
+                  </Index.Box>
+            </TabPanel>
+      </Index.Box>
+
+
+
+      <!-- view modal -->
+
+      // view modal
+      const [openView, setOpenView] = React.useState(false);
+      const handleOpenView = () => setOpenView(true);
+      const handleCloseView = () => setOpenView(false);
+
+      
+      <Index.Modal
+      open={openView}
+      onClose={handleCloseView}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+      className="modal"
+    >
+      <Index.Box
+        sx={PagesIndex.style}
+        className="modal-inner-main subscription-modal-inner-main"
+      >
+        <Index.Box className="modal-header">
+          <Index.Typography
+            id="modal-modal-title"
+            className="modal-title"
+            variant="h6"
+            component="h2"
+          >
+            View product
+          </Index.Typography>
+          <Index.Button className="modal-close-btn" onClick={handleCloseView}>
+            <span>
+              <img
+                src={PagesIndex.Svg.closeIcon}
+                className="modal-close-icon"
+                alt="Close"
+              />
+            </span>
+          </Index.Button>
+        </Index.Box>
+        <Index.Box className="modal-body">
+          <Index.Box className="modal-hgt-scroll cus-scrollbar">
+            <Index.Box className="view-content-main">
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  User Name:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  Rinku Prajapati
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Broker Name:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  PhillipCapital (India) Pvt. Ltd.
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Product Name:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  xzsxddaw
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Sub Product:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  dsfdsf
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Client Id:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  2145
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  No. Of Lots:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  45554
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Price:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  12546
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Start Date:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  30/08/2024
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Expiry Date:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  30/12/2024
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  Status:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  Enable
+                </Index.Typography>
+              </Index.Box>
+              <Index.Box className="view-content-flex">
+                <Index.Typography
+                  className="view-content-lable"
+                  variant="h6"
+                  component="h2"
+                >
+                  MAC Address:
+                </Index.Typography>
+                <Index.Typography
+                  className="view-content-value"
+                  variant="h6"
+                  component="h2"
+                >
+                  cvchfghf
+                </Index.Typography>
+              </Index.Box>
+            </Index.Box>
+          </Index.Box>
+        </Index.Box>
+      </Index.Box>
+    </Index.Modal>
